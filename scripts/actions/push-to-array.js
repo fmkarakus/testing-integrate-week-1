@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 const pushToArrayHandler = () => {
   debugger;
-  console.log('-- action: push to array --');
-  console.log('inputsArray (before):', typeof inputsArray, '\n', inputsArray);
+  console.log("-- action: push to array --");
+  console.log("inputsArray (before):", typeof inputsArray, "\n", inputsArray);
 
-  const newInput = prompt('input some text to save');
-  console.log('newInput:', typeof newInput, '\n', newInput);
+  const newInput = prompt("input some text to save");
+  console.log("newInput:", typeof newInput, "\n", newInput);
 
   if (newInput === null) {
     // leave the handler, there's nothing to do!
@@ -14,11 +14,9 @@ const pushToArrayHandler = () => {
   }
 
   // push the new value into the shared array
-  _.push(_);
+  inputsArray.push(newInput);
 
-
-  console.log('inputsArray (after):', typeof inputsArray, '\n', inputsArray);
+  console.log("inputsArray (after):", typeof inputsArray, "\n", inputsArray);
 
   alert(`your input has been saved`);
-
 };

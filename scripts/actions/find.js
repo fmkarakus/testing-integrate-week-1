@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * checks if a value is in an array
@@ -8,65 +8,59 @@
  */
 const isItThere = (arrOfStrings, toFind) => {
   let exists = false;
-  for (let _ of _) {
-
+  for (let item of arrOfStrings) {
+    exists = exists || item === toFind;
   }
   return exists;
 };
 
-
-
-
 // test the function (all the tests work!)
 const assert = chai.assert;
 
-describe('isItThere checks if a certain string is in an array of strings', () => {
-  it('empty arrays return false', () => {
+describe("isItThere checks if a certain string is in an array of strings", () => {
+  it("empty arrays return false", () => {
     const expect = false;
-    const actual = isItThere([], 'empty!');
+    const actual = isItThere([], "empty!");
     assert.strictEqual(actual, expect);
   });
-  it('finds when there is one item', () => {
+  it("finds when there is one item", () => {
     const expect = true;
-    const actual = isItThere(['the only'], 'the only');
+    const actual = isItThere(["the only"], "the only");
     assert.strictEqual(actual, expect);
   });
-  it('finds the first item of many', () => {
+  it("finds the first item of many", () => {
     const expect = true;
-    const actual = isItThere(['x', '5', '12-0'], 'x');
+    const actual = isItThere(["x", "5", "12-0"], "x");
     assert.strictEqual(actual, expect);
   });
-  it('finds the last item of many', () => {
+  it("finds the last item of many", () => {
     const expect = true;
-    const actual = isItThere(['x', '5', '12-0'], '12-0');
+    const actual = isItThere(["x", "5", "12-0"], "12-0");
     assert.strictEqual(actual, expect);
   });
-  it('does not find missing items', () => {
+  it("does not find missing items", () => {
     const expect = false;
-    const actual = isItThere(['x', '5', '12-0'], ':(');
+    const actual = isItThere(["x", "5", "12-0"], ":(");
     assert.strictEqual(actual, expect);
   });
-  it('can find the empty string', () => {
+  it("can find the empty string", () => {
     const expect = true;
-    const actual = isItThere(['x', '', '12-0'], '');
+    const actual = isItThere(["x", "", "12-0"], "");
     assert.strictEqual(actual, expect);
   });
 });
-
-
-
 
 // allow users to interact with the function
 //  (this handler works!)
 const findValueHandler = () => {
   debugger;
 
-  console.log('-- action: find value --');
-  console.log('inputsArray:', typeof inputsArray, '\n', inputsArray);
-  console.log('found (before):', typeof found, '\n', found);
+  console.log("-- action: find value --");
+  console.log("inputsArray:", typeof inputsArray, "\n", inputsArray);
+  console.log("found (before):", typeof found, "\n", found);
 
-  const toFind = prompt('enter a value to find');
-  console.log('toFind:', typeof toFind, '\n', toFind);
+  const toFind = prompt("enter a value to find");
+  console.log("toFind:", typeof toFind, "\n", toFind);
 
   if (toFind === null) {
     // leave the handler, there's nothing to do!
@@ -74,7 +68,7 @@ const findValueHandler = () => {
   }
 
   const didFind = isItThere(inputsArray, toFind);
-  console.log('didFind:', typeof didFind, '\n', didFind);
+  console.log("didFind:", typeof didFind, "\n", didFind);
 
   if (!didFind) {
     alert(`did not find: \n${toFind}`);
@@ -84,7 +78,7 @@ const findValueHandler = () => {
 
   found = toFind;
 
-  console.log('found (after):', typeof found, '\n', found);
+  console.log("found (after):", typeof found, "\n", found);
 
   displayFoundHandler();
 };
